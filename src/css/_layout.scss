@@ -1,4 +1,5 @@
 @use "base";
+
 * {
   font-family: base.$primary-fonts;
   font-size: 1.1rem;
@@ -7,22 +8,25 @@
 }
 
 body {
+  width: 100%;
   background-color: base.$primary-bg;
   line-height: base.$standard-line-height;
 }
 header {
+  display: flex;
+  flex-wrap: wrap;
   background-color: base.$primary-blue;
   padding: base.$standard-padding;
   text-align: center;
   p {
     font-size: 1.5rem;
     color: base.$white;
-    padding-top: 2%;
+    text-align: center;
   }
   li {
     list-style: none;
-    display: inline;
-    padding: 2%;
+    display: flex;
+    padding: base.$link-padding;
   }
   a {
     color: base.$white;
@@ -30,13 +34,31 @@ header {
     padding: 1px;
   }
   a:hover {
-    color: darken(base.$accent-blue, 80%);
     border-radius: base.$a-hoover-radius;
-    box-shadow: base.$a-hoover-boxshadow;
-    background-color: base.$a-hoover-bg;
-    padding: 7px;
+    text-shadow: base.$a-hover-shadow;
   }
 }
+//Class for the overall styling of the navigation
+@mixin nav-overall-styling {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 100%;
+  background-color: lighten(base.$primary-blue, 2%);
+}
+@mixin nav-styling($val) {
+  @if $val == small-screen {
+    @include nav-overall-styling;
+    padding: 60px 120px 120px 240px;
+  } @else if $val == bigger-screen {
+    @include nav-overall-styling;
+    padding: 120px 160px 120px 250px;
+  }
+}
+nav {
+  @include nav-styling(bigger-screen);
+}
+
 main {
   padding: base.$standard-padding;
   width: base.$big-screen-width;
@@ -62,8 +84,27 @@ footer {
 #neon-text {
   @include h1;
   font-size: 3rem;
-  text-shadow: base.$neon-shadow;
 }
+.fa-bars {
+  font-size: 2rem;
+  text-shadow: base.$neon-shadow;
+  color: base.$white;
+  justify-content: end;
+  display: flex;
+  margin-bottom: base.$standard-margin;
+
+  &:hover {
+    text-shadow: base.$a-hover-shadow;
+  }
+}
+.burger {
+  position: absolute;
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  z-index: 999;
+}
+
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   main {
     width: base.$medium-screen-width;
@@ -72,6 +113,9 @@ footer {
 @media screen and (max-width: 768px) {
   main {
     width: base.$small-screen-width;
+  }
+  nav {
+    @include nav-styling(small-screen);
   }
 }
 @media (prefers-color-scheme: dark) {
