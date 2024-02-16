@@ -1,0 +1,85 @@
+@use "base";
+* {
+  font-family: base.$primary-fonts;
+  font-size: 1.1rem;
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  background-color: base.$primary-bg;
+  line-height: base.$standard-line-height;
+}
+header {
+  background-color: base.$primary-blue;
+  padding: base.$standard-padding;
+  text-align: center;
+  p {
+    font-size: 1.5rem;
+    color: base.$white;
+    padding-top: 2%;
+  }
+  li {
+    list-style: none;
+    display: inline;
+    padding: 2%;
+  }
+  a {
+    color: base.$white;
+    text-decoration: none;
+    padding: 1px;
+  }
+  a:hover {
+    color: darken(base.$accent-blue, 80%);
+    border-radius: base.$a-hoover-radius;
+    box-shadow: base.$a-hoover-boxshadow;
+    background-color: base.$a-hoover-bg;
+    padding: 7px;
+  }
+}
+main {
+  padding: base.$standard-padding;
+  width: base.$big-screen-width;
+  margin: auto;
+}
+@mixin h1 {
+  font-size: 2rem;
+  padding-top: base.$heading-padding;
+  text-align: center;
+}
+h2,
+h3 {
+  font-size: 1.4rem;
+  padding-top: base.$heading-padding;
+}
+footer {
+  background-color: base.$primary-blue;
+  padding: base.$standard-padding;
+  color: base.$white;
+  text-align: center;
+}
+
+#neon-text {
+  @include h1;
+  font-size: 3rem;
+  text-shadow: base.$neon-shadow;
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  main {
+    width: base.$medium-screen-width;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    width: base.$small-screen-width;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: base.$primary-bg-darkm;
+    color: base.$primary-text-darkm;
+  }
+  header {
+    background-color: base.$primary-blue-darkm;
+  }
+}
