@@ -12,19 +12,37 @@
     <title>SASS</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Startsida</a></li>
-          <li><a href="SASS.html">SASS</a></li>
-          <li><a href="#">Sida 3</a></li>
-          <li><a href="#">Sida 4</a></li>
-          <li><a href="#">Sida 5</a></li>
-        </ul>
-      </nav>
-      <div><p>Moment 3 - CSS-preprocessorer</p></div>
+    <img class="logo" src="images/logo-white.svg" alt="aurora borealis" />
+    <div class="burger" id="burger"><i class="fa-solid fa-bars"></i></div>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">Startsida</a></li>
+        <li><a href="SASS.html">SASS</a></li>
+        <li><a href="#">Sida 3</a></li>
+        <li><a href="#">Sida 4</a></li>
+        <li><a href="#">Sida 5</a></li>
+      </ul>
+    </nav>
+    <header id="sticky">
+      <picture class="full-width-elements">
+        <source
+          media="(min-width:1024px)"
+          srcset="images/northern-lights-2.jpg?as=avif&width=1500"
+          type="image/avif"
+        />
+        <source
+          srcset="images/northern-lights-2.jpg?as=avif&width=800"
+          type="image/avif"
+        />
+        <source
+          media="(min-width:1024px)"
+          srset="images/northern-lights-2.jpg?width=1500"
+        />
+        <source srcset="images/northern-lights-2.jpg?width=800" />
+        <img src="images/northern-lights-2.jpg" alt="norrsken" />
+      </picture>
     </header>
-    <main>
+    <main class="sass">
       <h1>SASS</h1>
       <p></p>
       <section>

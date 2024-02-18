@@ -25,6 +25,17 @@ header {
     color: base.$white;
     text-align: center;
   }
+}
+//Class for the overall styling of the navigation
+@mixin nav-overall-styling {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 100%;
+  background-color: base.$accent-blue;
+  z-index: 1;
+
   li {
     list-style: none;
     display: flex;
@@ -36,19 +47,10 @@ header {
     padding: 1px;
   }
   a:hover {
-    border-radius: base.$a-hoover-radius;
     text-shadow: base.$a-hover-shadow;
   }
 }
-//Class for the overall styling of the navigation
-@mixin nav-overall-styling {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-bottom-left-radius: 100%;
-  background-color: base.$accent-blue;
-}
+//nav styling - with the overall styling from above and the different padding depending on screen size
 @mixin nav-styling($val) {
   @if $val == small-screen {
     @include nav-overall-styling;
@@ -58,10 +60,11 @@ header {
     padding: 120px 160px 120px 250px;
   }
 }
+//styling for nav on big screen
 nav {
   @include nav-styling(bigger-screen);
 }
-
+//Styling main and inheritance with the difference for the underpage sass
 main {
   position: relative;
   width: base.$big-screen-width;
@@ -70,17 +73,11 @@ main {
   margin-top: 465px;
   background-color: base.$element-bg;
 
-  p {
-    width: 70%;
-    margin: auto;
-  }
-  h2 {
-    text-align: center;
-    width: 70%;
-    margin: auto;
-    padding-bottom: base.$link-padding;
+  &.sass {
+    margin-top: 100px;
   }
 }
+
 @mixin h1 {
   font-size: 2rem;
   text-align: center;
@@ -122,6 +119,7 @@ footer {
   display: flex;
   justify-content: end;
   z-index: 999;
+  margin: base.$margin-3;
 }
 .logo {
   width: 175px;
@@ -137,7 +135,7 @@ footer {
   width: 100%;
   max-height: 100vh;
 }
-
+//header pic with different values depending on screen size
 @mixin header-pic-styling {
   width: 100%;
   object-fit: cover;
@@ -187,7 +185,6 @@ footer {
     font-size: 0.8rem;
   }
 }
-
 .cursive {
   font-size: 0.8rem;
   font-style: italic;
@@ -208,17 +205,19 @@ footer {
   background-color: darken(base.$element-bg, 8%);
   padding: base.$standard-padding;
 }
-//Små skärmar
+//Mindre skärmar
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   main {
     width: base.$medium-screen-width;
     margin-top: 510px;
   }
+  //pic values for medium screen
   .full-width-elements img {
     @include pic-width(small-screen);
   }
 }
 @media screen and (max-width: 768px) {
+  //styling for nav on small screen
   nav {
     @include nav-styling(small-screen);
   }
@@ -240,6 +239,7 @@ footer {
       font-size: 1rem;
     }
   }
+  //styling for small screen
   .full-width-elements img {
     @include pic-width(small-screen);
   }
@@ -250,6 +250,7 @@ footer {
     }
   }
 }
+//Dark mode
 @media (prefers-color-scheme: dark) {
   body {
     background-color: base.$primary-bg-darkm;
