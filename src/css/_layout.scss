@@ -13,6 +13,8 @@ body {
   line-height: base.$standard-line-height;
 }
 header {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   background-color: base.$primary-blue;
@@ -40,11 +42,12 @@ header {
 }
 //Class for the overall styling of the navigation
 @mixin nav-overall-styling {
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
   border-bottom-left-radius: 100%;
-  background-color: lighten(base.$primary-blue, 2%);
+  background-color: base.$accent-blue;
 }
 @mixin nav-styling($val) {
   @if $val == small-screen {
@@ -60,14 +63,28 @@ nav {
 }
 
 main {
-  padding: base.$standard-padding;
+  position: relative;
   width: base.$big-screen-width;
+  padding: base.$standard-padding;
   margin: auto;
+  margin-top: 465px;
+  background-color: base.$element-bg;
+
+  p {
+    width: 70%;
+    margin: auto;
+  }
+  h2 {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: base.$link-padding;
+  }
 }
 @mixin h1 {
   font-size: 2rem;
-  padding-top: base.$heading-padding;
   text-align: center;
+  padding-bottom: 5%;
 }
 h2,
 h3 {
@@ -75,10 +92,12 @@ h3 {
   padding-top: base.$heading-padding;
 }
 footer {
+  position: relative;
   background-color: base.$primary-blue;
   padding: base.$standard-padding;
   color: base.$white;
   text-align: center;
+  z-index: 9999;
 }
 
 #neon-text {
@@ -104,18 +123,131 @@ footer {
   justify-content: end;
   z-index: 999;
 }
+.logo {
+  width: 175px;
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  z-index: 999;
+  margin: base.$standard-margin;
+}
 
+//Pictures
+.full-width-elements {
+  width: 100%;
+  max-height: 100vh;
+}
+
+@mixin header-pic-styling {
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@mixin pic-width($size) {
+  @if ($size == small-screen) {
+    @include header-pic-styling;
+    min-height: 100vh;
+  } @else if($size==big-screen) {
+    @include header-pic-styling;
+    max-height: 100vh;
+  }
+}
+.full-width-elements img {
+  @include pic-width(big-screen);
+}
+
+.page-pic img {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  border-radius: 50%;
+  opacity: 0.6;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+#icons {
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  h2 {
+    width: 70%;
+  }
+  div {
+    margin-top: base.$standard-margin;
+    padding-top: base.$heading-padding;
+    width: 30%;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+.cursive {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+#aurora-header,
+#myt-header {
+  padding: base.$standard-padding;
+
+  h2 {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: base.$link-padding;
+    background-color: darken(base.$element-bg, 8%);
+  }
+}
+#aurora-text,
+#myt-text {
+  display: none;
+  background-color: darken(base.$element-bg, 8%);
+  padding: base.$standard-padding;
+}
+//Små skärmar
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   main {
     width: base.$medium-screen-width;
+    margin-top: 510px;
+  }
+  .full-width-elements img {
+    @include pic-width(small-screen);
   }
 }
 @media screen and (max-width: 768px) {
-  main {
-    width: base.$small-screen-width;
-  }
   nav {
     @include nav-styling(small-screen);
+  }
+  #neon-text {
+    font-size: 2rem;
+  }
+  h2 {
+    text-align: start;
+  }
+  main {
+    width: base.$small-screen-width;
+    margin-top: 545;
+    h2 {
+      width: 90%;
+      text-align: left;
+    }
+    p {
+      width: 90%;
+      font-size: 1rem;
+    }
+  }
+  .full-width-elements img {
+    @include pic-width(small-screen);
+  }
+  #icons {
+    display: block;
+    div {
+      width: 100%;
+    }
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -125,5 +257,11 @@ footer {
   }
   header {
     background-color: base.$primary-blue-darkm;
+  }
+  main {
+    background-color: base.$element-bg-darkm;
+  }
+  nav {
+    background-color: base.$accent-blue-darkm;
   }
 }

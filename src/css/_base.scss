@@ -1,14 +1,16 @@
 //Colors
-$primary-bg: #9ebcd1;
-$primary-blue: #0a092e;
-$accent-blue: rgb(1, 179, 239);
+$primary-bg: #092538;
+$element-bg: #adb8cc;
+$primary-blue: #10172d;
+$accent-blue: #293a74;
 $primary-text: #000;
 $white: #fff;
 
 //Dark theme
 $primary-bg-darkm: darken($primary-blue, 3%);
+$element-bg-darkm: lighten($primary-blue, 20%);
 $primary-blue-darkm: lighten($primary-blue, 1%);
-$accent-blue-darkm: darken($accent-blue, 20%);
+$accent-blue-darkm: darken($accent-blue, 12%);
 $primary-text-darkm: #fffbfc;
 $white: #fff;
 
@@ -25,9 +27,9 @@ $standard-line-height: 2rem;
 $heading-padding: 6%;
 
 //screen width
-$big-screen-width: 40%;
+$big-screen-width: 60%;
 $medium-screen-width: 70%;
-$small-screen-width: 90%;
+$small-screen-width: 80%;
 
 //shadow
 $shadow: 10px 5px 5px rgb(157, 151, 151);
