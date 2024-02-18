@@ -1,0 +1,40 @@
+//Colors
+$primary-bg: #092538;
+$element-bg: #adb8cc;
+$primary-blue: #10172d;
+$accent-blue: #293a74;
+$primary-text: #000;
+$white: #fff;
+
+//Dark theme
+$primary-bg-darkm: darken($primary-blue, 3%);
+$element-bg-darkm: lighten($primary-blue, 20%);
+$primary-blue-darkm: lighten($primary-blue, 1%);
+$accent-blue-darkm: darken($accent-blue, 12%);
+$primary-text-darkm: #fffbfc;
+
+//fonts & text
+$primary-fonts: "open sans", verdana, sand-serif;
+$standard-line-height: 2rem;
+
+//padding&margin
+$standard-padding: 3%;
+$standard-margin: 2%;
+$link-padding: 1%;
+$margin-3: 3%;
+$heading-padding: 6%;
+
+//screen width
+$big-screen-width: 60%;
+$medium-screen-width: 70%;
+$small-screen-width: 80%;
+
+//shadow
+$shadow: 10px 5px 5px rgb(157, 151, 151);
+$neon-shadow: rgb(255, 255, 255) 0 0 10px, #fff 0 0 25px, #0fa 0 0 55px,
+  #fff 0 0 85px, rgb(0, 238, 255) 0 0 100px, rgb(255, 255, 255) 0 0 120px,
+  blue 0 0 200px;
+
+//hoover
+$a-hover-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 22px #0fa, 0 0 52px #0fa,
+  0 0 72px #0fa, 0 0 92px #0fa, 0 0 122px #0fa, 0 0 122px rgb(0, 191, 255);

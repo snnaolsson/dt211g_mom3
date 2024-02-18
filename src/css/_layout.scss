@@ -1,0 +1,268 @@
+@use "base";
+
+* {
+  font-family: base.$primary-fonts;
+  font-size: 1.1rem;
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  width: 100%;
+  background-color: base.$primary-bg;
+  line-height: base.$standard-line-height;
+}
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: base.$primary-blue;
+  padding: base.$standard-padding;
+  text-align: center;
+  p {
+    font-size: 1.5rem;
+    color: base.$white;
+    text-align: center;
+  }
+}
+//Class for the overall styling of the navigation
+@mixin nav-overall-styling {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 100%;
+  background-color: base.$accent-blue;
+  z-index: 1;
+
+  li {
+    list-style: none;
+    display: flex;
+    padding: base.$link-padding;
+  }
+  a {
+    color: base.$white;
+    text-decoration: none;
+    padding: 1px;
+  }
+  a:hover {
+    text-shadow: base.$a-hover-shadow;
+  }
+}
+//nav styling - with the overall styling from above and the different padding depending on screen size
+@mixin nav-styling($val) {
+  @if $val == small-screen {
+    @include nav-overall-styling;
+    padding: 60px 120px 120px 240px;
+  } @else if $val == bigger-screen {
+    @include nav-overall-styling;
+    padding: 120px 160px 120px 250px;
+  }
+}
+//styling for nav on big screen
+nav {
+  @include nav-styling(bigger-screen);
+}
+//Styling main and inheritance with the difference for the underpage sass
+main {
+  position: relative;
+  width: base.$big-screen-width;
+  padding: base.$standard-padding;
+  margin: auto;
+  margin-top: 465px;
+  background-color: base.$element-bg;
+
+  &.sass {
+    margin-top: 100px;
+  }
+}
+
+@mixin h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 5%;
+}
+h2,
+h3 {
+  font-size: 1.4rem;
+  padding-top: base.$heading-padding;
+}
+footer {
+  position: relative;
+  background-color: base.$primary-blue;
+  padding: base.$standard-padding;
+  color: base.$white;
+  text-align: center;
+  z-index: 9999;
+}
+
+#neon-text {
+  @include h1;
+  font-size: 3rem;
+}
+.fa-bars {
+  font-size: 2rem;
+  text-shadow: base.$neon-shadow;
+  color: base.$white;
+  justify-content: end;
+  display: flex;
+  margin-bottom: base.$standard-margin;
+
+  &:hover {
+    text-shadow: base.$a-hover-shadow;
+  }
+}
+.burger {
+  position: absolute;
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  z-index: 999;
+  margin: base.$margin-3;
+}
+.logo {
+  width: 175px;
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  z-index: 999;
+  margin: base.$standard-margin;
+}
+
+//Pictures
+.full-width-elements {
+  width: 100%;
+  max-height: 100vh;
+}
+//header pic with different values depending on screen size
+@mixin header-pic-styling {
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@mixin pic-width($size) {
+  @if ($size == small-screen) {
+    @include header-pic-styling;
+    min-height: 100vh;
+  } @else if($size==big-screen) {
+    @include header-pic-styling;
+    max-height: 100vh;
+  }
+}
+.full-width-elements img {
+  @include pic-width(big-screen);
+}
+
+.page-pic img {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  border-radius: 50%;
+  opacity: 0.6;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+#icons {
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  h2 {
+    width: 70%;
+  }
+  div {
+    margin-top: base.$standard-margin;
+    padding-top: base.$heading-padding;
+    width: 30%;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
+.cursive {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+#aurora-header,
+#myt-header {
+  padding: base.$standard-padding;
+
+  h2 {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: base.$link-padding;
+    background-color: darken(base.$element-bg, 8%);
+  }
+}
+#aurora-text,
+#myt-text {
+  display: none;
+  background-color: darken(base.$element-bg, 8%);
+  padding: base.$standard-padding;
+}
+//Mindre skärmar
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  main {
+    width: base.$medium-screen-width;
+    margin-top: 510px;
+  }
+  //pic values for medium screen
+  .full-width-elements img {
+    @include pic-width(small-screen);
+  }
+}
+@media screen and (max-width: 768px) {
+  //styling for nav on small screen
+  nav {
+    @include nav-styling(small-screen);
+  }
+  #neon-text {
+    font-size: 2rem;
+  }
+  h2 {
+    text-align: start;
+  }
+  main {
+    width: base.$small-screen-width;
+    margin-top: 545;
+    h2 {
+      width: 90%;
+      text-align: left;
+    }
+    p {
+      width: 90%;
+      font-size: 1rem;
+    }
+  }
+  //styling for small screen
+  .full-width-elements img {
+    @include pic-width(small-screen);
+  }
+  #icons {
+    display: block;
+    div {
+      width: 100%;
+    }
+  }
+}
+//Dark mode
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: base.$primary-bg-darkm;
+    color: base.$primary-text-darkm;
+  }
+  header {
+    background-color: base.$primary-blue-darkm;
+  }
+  main {
+    background-color: base.$element-bg-darkm;
+  }
+  nav {
+    background-color: base.$accent-blue-darkm;
+  }
+}

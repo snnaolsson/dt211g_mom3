@@ -3,33 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4f7fd7ff6b.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/main.scss" />
     <script type="module" src="js/app.js"></script>
     <title>SASS</title>
   </head>
   <body>
-    <header>
-      <div>Moment 3 - CSS-preprocessorer</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Startsida</a></li>
-          <li><a href="SASS.html">SASS</a></li>
-          <li><a href="#">Sida 3</a></li>
-          <li><a href="#">Sida 4</a></li>
-          <li><a href="#">Sida 5</a></li>
-        </ul>
-      </nav>
+    <img class="logo" src="images/logo-white.svg" alt="aurora borealis" />
+    <div class="burger" id="burger"><i class="fa-solid fa-bars"></i></div>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">Startsida</a></li>
+        <li><a href="SASS.html">SASS</a></li>
+        <li><a href="#">Sida 3</a></li>
+        <li><a href="#">Sida 4</a></li>
+        <li><a href="#">Sida 5</a></li>
+      </ul>
+    </nav>
+    <header id="sticky">
+      <picture class="full-width-elements">
+        <source
+          media="(min-width:1024px)"
+          srcset="images/northern-lights-2.jpg?as=avif&width=1500"
+          type="image/avif"
+        />
+        <source
+          srcset="images/northern-lights-2.jpg?as=avif&width=800"
+          type="image/avif"
+        />
+        <source
+          media="(min-width:1024px)"
+          srset="images/northern-lights-2.jpg?width=1500"
+        />
+        <source srcset="images/northern-lights-2.jpg?width=800" />
+        <img src="images/northern-lights-2.jpg" alt="norrsken" />
+      </picture>
     </header>
-    <section>
+    <main class="sass">
       <h1>SASS</h1>
       <p></p>
       <section>
         <h2>Vilka för- och nackdelar ser du med SASS?</h2>
-        <p></p>
+        <p>
+          Fördelarna är att det går att göra läsbarheten på koden så mycket
+          enklare och mer överskådlig med SASS än med vanlig CSS.
+        </p>
+        <p>
+          Nackdelarna är väl att det är lätt att nesta in sig för djupt om man
+          inte är vaksam. Om man inte använder typ parcel som visar var i
+          scss-koden som saker är så kan det bli väldigt svårt att hitta igen
+          det man letar efter.
+        </p>
         <h3>Hur var det att komma igång att arbete med en CSS-preprocessor?</h3>
-        <p></p>
+        <p>
+          Lite svårt från början. Även om det finns många funktioner som liknar
+          att skriva "vanlig" kod, typ js eller c#, så fungerar ju inte SASS
+          riktigt likadant (tyvärr, tänk hur smidigt det hade varit?)
+        </p>
+        <p>
+          När man väl har kommit in i det och börjat utforska möjligheterna med
+          SASS så är det så kul och det blir verkligen så mycket lättare att
+          överblicka och skriva sin CSS-kod.
+        </p>
       </section>
-    </section>
+    </main>
     <footer>
       <p>saol1901@student.miun.se</p>
     </footer>

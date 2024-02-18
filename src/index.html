@@ -4,111 +4,180 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.scss" />
+    <script
+      src="https://kit.fontawesome.com/4f7fd7ff6b.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="js/app.js"></script>
     <title>Startsida</title>
   </head>
   <body>
-    <header>
-      <div>Moment 3 - CSS-preprocessorer</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Startsida</a></li>
-          <li><a href="SASS.html">SASS</a></li>
-          <li><a href="#">Sida 3</a></li>
-          <li><a href="#">Sida 4</a></li>
-          <li><a href="#">Sida 5</a></li>
-        </ul>
-      </nav>
+    <img class="logo" src="images/logo-white.svg" alt="aurora borealis" />
+    <div class="burger" id="burger"><i class="fa-solid fa-bars"></i></div>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html">Startsida</a></li>
+        <li><a href="SASS.html">SASS</a></li>
+        <li><a href="#">Sida 3</a></li>
+        <li><a href="#">Sida 4</a></li>
+        <li><a href="#">Sida 5</a></li>
+      </ul>
+    </nav>
+    <header id="sticky">
+      <picture class="full-width-elements">
+        <source
+          media="(min-width:1024px)"
+          srcset="images/northern-lights-2.jpg?as=avif&width=1500"
+          type="image/avif"
+        />
+        <source
+          srcset="images/northern-lights-2.jpg?as=avif&width=800"
+          type="image/avif"
+        />
+        <source
+          media="(min-width:1024px)"
+          srset="images/northern-lights-2.jpg?width=1500"
+        />
+        <source srcset="images/northern-lights-2.jpg?width=800" />
+        <img src="images/northern-lights-2.jpg" alt="norrsken" />
+      </picture>
+
+      <div><p>Moment 3 - CSS-preprocessorer</p></div>
     </header>
-    <section>
-      <h1>Aurora borealis</h1>
-      <h2>Vad är norrsken?</h2>
-      <p>
-        Det finns både norrsken och sydsken, även kallade Aurora borealis
-        respektive Aurora australis, eller gemensamt polarsken. Det är
-        ljusfenomen som är vanligast i jordens polarområden. Polarsken är ofta
-        gulgröna till färgen men de kan också vara helt röda eller skifta i
-        rödviolett i underkanten. Med blotta ögat kan man endast se dem på
-        natten, för att observera fenomenet i dagsljus krävs särskilda
-        instrument.
-      </p>
-    </section>
-    <section>
-      <h2>Hur uppstår norrsken?</h2>
-      <p>
-        Polarsken uppstår när laddade partiklar (vanligen elektroner) från solen
-        (solvinden) faller in mot den översta delen av jordatmosfären på cirka
-        100-400 km höjd. Elektronerna påverkas av jordens magnetfält och träffar
-        därför atmosfären längs en oval runt vardera magnetiska polen, den så
-        kallade norrskensovalen på norra halvklotet. De laddade partiklarna
-        bromsas upp och förlorar rörelseenergi till främst syre- och kväveatomer
-        i översta delen av atmosfären. Syre- och kväveatomerna omvandlar sedan
-        denna energi till synligt ljus. Vid ökad solaktivitet och magnetiska
-        stormar vidgas ovalen och förskjuts då mot lägre breddgrader och
-        polarskenet blir samtidigt intensivare. Det är vid sådana tillfällen man
-        kan se norrsken i södra Sverige och ibland ännu sydligare.
-        Norrskenszonen är ett område på jorden där den genomsnittliga
-        förekomsten av norrsken är som störst. Den sträcker sig genom
-        nordligaste Skandinavien över Island, Grönlands sydspets, genom norra
-        Canada och Alaska samt längs Sibiriens nordkust. En liknande zon för
-        sydsken finns på södra halvklotet. Polarskenet uppstår på mycket hög
-        höjd (cirka 100 km och däröver) och har alltså ingen direkt koppling
-        till det vanliga vädret som i huvudsak utspelas under 10 km. Däremot kan
-        solvinden, som ju genererar polarskenet, påverka vädret i rymden. Det
-        vill säga satelliter och rymdfarare påverkas. Indirekt finns det
-        kopplingar mellan solvinden (rymdvädret) och aktiviteter vid jordytan.
-        Eftersom solvinden består av elektriskt laddade partiklar bär den med
-        sig ett elektromagnetiskt fält. Detta fält når jordytan och kan genom
-        induktion påverka och störa till exempel kraftöverföringen via elnätet
-        och även TV och radiosändningar. (Källa:
-        <a
-          href="https://www.smhi.se/kunskapsbanken/meteorologi/optiska-fenomen/norrsken-1.3894"
-          >SMHI</a
-        >)
-      </p>
-    </section>
-    <section>
-      <h2>När kan man se norrsken?</h2>
-      <p>
-        Det svårfångade norrskenet är omöjligt att förutspå trots att
-        rymdfysikens metoder för att ställa prognoser är i ständig utveckling.
-      </p>
-    </section>
-    <section>
-      <h2>Norrskensmytologi</h2>
-      <p>
-        I den nordiska mytologin ansågs norrskenet vara speglingar från
-        valkyriornas rustningar och sköldar när de ledde fallna krigare till
-        Oden. Inom folktron uppstod även den fantasifulla uppfattningen att
-        norrskenet var reflexer från enorma sillstim i havet, vilket togs som
-        tecken på att sillfångsten skulle bli god.Ibland betraktades norrskenet
-        som ett dåligt omen, som varslade om farsoter och eldsvådor. Om skenet
-        gnistrade och sprakade ovanligt mycket var krig i antågande. Skenet
-        ansågs även förebåda väderomslag och norrsken tidigt på hösten innebar
-        att vintern skulle bli sträng.Bland samerna sågs norrskenet som ett
-        illavarslande tecken, som skulle respekteras och fruktas. Ljuset ansågs
-        komma från de dödas själar och därför skulle man helst inte tala om
-        norrskenet eller dra till sig dess uppmärksamhet. Den som dristade sig
-        till att vinka, vissla eller sjunga kunde bli uppfångad av skenet och
-        bortförd. Bäst var att stanna inne och hålla sig stilla. I den isländska
-        folktron ansågs norrsken lindra smärta vid barnafödsel. Dock skulle
-        gravida kvinnor undvika att titta direkt på skenet, för det skulle göra
-        deras framtida barn skelögda. På Grönland föreställde man sig att
-        polarskenet representerade barn som hade dött vid födseln och nu dansade
-        på himlavalvet. I Norge trodde man istället att det var jungfrusjälar
-        som vinkade från himlen.I Finland kallas norrsken för ”revontulet”,
-        vilket bokstavligen betyder ”eldräv”. Namnet kommer från en legend där
-        fjällrävar är de som ligger bakom våra polarsken. Rävarna ska ha
-        sprungit så snabbt på himlen att gnistor ska ha uppstått när deras
-        lurviga svansar kom i kontakt med fjälltopparna. I en annan version slog
-        svansarna istället upp snöflingor som lystes upp av månljuset och
-        skapade ett norrsken på himlen. Detta skulle också förklara varför
-        polarsken endast kan ses vintertid – under sommaren finns det ju ingen
-        snö.
-      </p>
-    </section>
+    <main>
+      <section>
+        <h1 id="neon-text">Aurora borealis</h1>
+        <h2>Vad är norrsken?</h2>
+        <p>
+          Det finns både norrsken och sydsken, även kallade Aurora borealis
+          respektive Aurora australis, eller gemensamt polarsken. Det är
+          ljusfenomen som är vanligast i jordens polarområden. Polarsken är ofta
+          gulgröna till färgen men de kan också vara helt röda eller skifta i
+          rödviolett i underkanten. Med blotta ögat kan man endast se dem på
+          natten, för att observera fenomenet i dagsljus krävs särskilda
+          instrument.
+        </p>
+      </section>
+
+      <section>
+        <div id="icons">
+          <div>
+            <img src="images/winter-freeze.svg" />
+            <p>Norrskenet är främst synligt från september till april.</p>
+          </div>
+          <div>
+            <img src="images/mountain-solid.svg" />
+            <p>
+              Abisko är en av världens absolut bästa platser för att uppleva
+              norrsken.
+            </p>
+          </div>
+          <div>
+            <img src="images/clock-time-five.svg" />
+            <p>Bästa tiden att se norrsken är mellan 17-02.</p>
+          </div>
+        </div>
+      </section>
+      <section id="aurora-header">
+        <h2>Hur uppstår norrsken?</h2>
+        <div id="aurora-text">
+          <p>
+            Polarsken uppstår när laddade partiklar (vanligen elektroner) från
+            solen (solvinden) faller in mot den översta delen av jordatmosfären
+            på cirka 100-400 km höjd. Elektronerna påverkas av jordens
+            magnetfält och träffar därför atmosfären längs en oval runt vardera
+            magnetiska polen, den så kallade norrskensovalen på norra
+            halvklotet. De laddade partiklarna bromsas upp och förlorar
+            rörelseenergi till främst syre- och kväveatomer i översta delen av
+            atmosfären. Syre- och kväveatomerna omvandlar sedan denna energi
+            till synligt ljus. Vid ökad solaktivitet och magnetiska stormar
+            vidgas ovalen och förskjuts då mot lägre breddgrader och polarskenet
+            blir samtidigt intensivare. Det är vid sådana tillfällen man kan se
+            norrsken i södra Sverige och ibland ännu sydligare. Norrskenszonen
+            är ett område på jorden där den genomsnittliga förekomsten av
+            norrsken är som störst. Den sträcker sig genom nordligaste
+            Skandinavien över Island, Grönlands sydspets, genom norra Canada och
+            Alaska samt längs Sibiriens nordkust. En liknande zon för sydsken
+            finns på södra halvklotet. Polarskenet uppstår på mycket hög höjd
+            (cirka 100 km och däröver) och har alltså ingen direkt koppling till
+            det vanliga vädret som i huvudsak utspelas under 10 km. Däremot kan
+            solvinden, som ju genererar polarskenet, påverka vädret i rymden.
+            Det vill säga satelliter och rymdfarare påverkas. Indirekt finns det
+            kopplingar mellan solvinden (rymdvädret) och aktiviteter vid
+            jordytan. Eftersom solvinden består av elektriskt laddade partiklar
+            bär den med sig ett elektromagnetiskt fält. Detta fält når jordytan
+            och kan genom induktion påverka och störa till exempel
+            kraftöverföringen via elnätet och även TV och radiosändningar.
+            <span class="--cursive"
+              >(Källa:
+              <a
+                href="https://www.smhi.se/kunskapsbanken/meteorologi/optiska-fenomen/norrsken-1.3894"
+                >SMHI</a
+              >)</span
+            >
+          </p>
+        </div>
+      </section>
+      <section id="myt-header">
+        <h2>Norrskensmytologi</h2>
+        <div id="myt-text">
+          <p>
+            I den nordiska mytologin ansågs norrskenet vara speglingar från
+            valkyriornas rustningar och sköldar när de ledde fallna krigare till
+            Oden. Inom folktron uppstod även den fantasifulla uppfattningen att
+            norrskenet var reflexer från enorma sillstim i havet, vilket togs
+            som tecken på att sillfångsten skulle bli god.Ibland betraktades
+            norrskenet som ett dåligt omen, som varslade om farsoter och
+            eldsvådor. Om skenet gnistrade och sprakade ovanligt mycket var krig
+            i antågande. Skenet ansågs även förebåda väderomslag och norrsken
+            tidigt på hösten innebar att vintern skulle bli sträng.Bland samerna
+            sågs norrskenet som ett illavarslande tecken, som skulle respekteras
+            och fruktas. Ljuset ansågs komma från de dödas själar och därför
+            skulle man helst inte tala om norrskenet eller dra till sig dess
+            uppmärksamhet. Den som dristade sig till att vinka, vissla eller
+            sjunga kunde bli uppfångad av skenet och bortförd. Bäst var att
+            stanna inne och hålla sig stilla. I den isländska folktron ansågs
+            norrsken lindra smärta vid barnafödsel. Dock skulle gravida kvinnor
+            undvika att titta direkt på skenet, för det skulle göra deras
+            framtida barn skelögda. På Grönland föreställde man sig att
+            polarskenet representerade barn som hade dött vid födseln och nu
+            dansade på himlavalvet. I Norge trodde man istället att det var
+            jungfrusjälar som vinkade från himlen.I Finland kallas norrsken för
+            ”revontulet”, vilket bokstavligen betyder ”eldräv”. Namnet kommer
+            från en legend där fjällrävar är de som ligger bakom våra polarsken.
+            Rävarna ska ha sprungit så snabbt på himlen att gnistor ska ha
+            uppstått när deras lurviga svansar kom i kontakt med fjälltopparna.
+            I en annan version slog svansarna istället upp snöflingor som lystes
+            upp av månljuset och skapade ett norrsken på himlen. Detta skulle
+            också förklara varför polarsken endast kan ses vintertid – under
+            sommaren finns det ju ingen snö.
+          </p>
+        </div>
+        <picture class="page-pic">
+          <source
+            media="(min-width:1024px)"
+            srcset="images/northern-lights-4.jpg?as=avif&width=1500"
+            type="image/avif"
+          />
+          <source
+            srcset="images/northern-lights-4.jpg?as=avif&width=800"
+            type="image/avif"
+          />
+          <source
+            media="(min-width:1024px)"
+            srset="images/northern-lights-4.jpg?width=1500"
+          />
+          <source srcset="images/northern-lights-4.jpg?width=800" />
+          <img src="images/northern-lights-4.jpg" alt="norrsken" />
+        </picture>
+      </section>
+    </main>
     <footer>
       <p>saol1901@student.miun.se</p>
+      <p class="cursive">
+        Alla bilder på hemsidan är från pixabay, alla ikoner är från font
+        awesome eller iconly
+      </p>
     </footer>
   </body>
 </html>
