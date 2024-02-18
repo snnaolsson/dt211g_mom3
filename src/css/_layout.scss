@@ -74,7 +74,14 @@ main {
   background-color: base.$element-bg;
 
   &.sass {
-    margin-top: 100px;
+    margin-top: 5px;
+    h1,
+    h2 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -126,7 +133,7 @@ footer {
   position: absolute;
   display: flex;
   justify-content: start;
-  z-index: 999;
+  z-index: 9999;
   margin: base.$standard-margin;
 }
 
@@ -205,6 +212,10 @@ footer {
   background-color: darken(base.$element-bg, 8%);
   padding: base.$standard-padding;
 }
+.fa-sass {
+  font-size: 4rem;
+  padding: 2%;
+}
 //Mindre skärmar
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   main {
@@ -231,11 +242,9 @@ footer {
     width: base.$small-screen-width;
     margin-top: 545;
     h2 {
-      width: 90%;
       text-align: left;
     }
     p {
-      width: 90%;
       font-size: 1rem;
     }
   }
