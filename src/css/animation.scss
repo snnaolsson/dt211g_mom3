@@ -1,0 +1,27 @@
+@keyframes moonGlide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(calc(100vw - 50px));
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+@keyframes wigglezoom {
+  0% {
+    transform: rotate(-10deg);
+    color: rgb(108, 90, 241);
+  }
+  100% {
+    transform: rotate(10deg);
+    color: rgb(252, 97, 179);
+  }
+}
