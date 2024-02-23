@@ -258,6 +258,11 @@ footer {
 .ball-header:hover {
   color: rgb(197, 16, 46);
 }
+
+#map {
+  height: 250px;
+  width: 250px;
+}
 //Mindre skärmar
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   main {

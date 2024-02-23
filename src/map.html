@@ -9,7 +9,8 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="js/app.js"></script>
-    <title>Animering</title>
+    <script type="module" src="js/karta.js"></script>
+    <title>Karta</title>
   </head>
   <body>
     <a href="index.html"
@@ -44,11 +45,22 @@
         <img src="images/northern-lights-2.jpg" alt="norrsken" />
       </picture>
     </header>
-    <main class="animation">
-      <h1 class="animation-header">Animering</h1>
-      <div id="moon"><img src="images/weather-night.svg" /></div>
-      <h2 class="ball-header">Make the ball bounce</h2>
-      <div class="ball"></div>
+    <main class="sass">
+      <section>
+        <h1>Kartor</h1>
+        <h2>Skriv in en plats så visas den på kartan</h2>
+        <input
+          id="location-input"
+          class="controls"
+          type="text"
+          placeholder="Search Box"
+        />
+        <div id="map"></div>
+      </section>
     </main>
+
+    <footer>
+      <p>saol1901@student.miun.se</p>
+    </footer>
   </body>
 </html>
