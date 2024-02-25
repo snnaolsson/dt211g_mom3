@@ -1,3 +1,4 @@
+/*FRÅN GOOGLES DOKUMENTATION FÖR ATT ANVÄNDA GOOGLE MAPS*/
 ((g) => {
   var h,
     a,
@@ -39,6 +40,7 @@
   // Add other bootstrap parameters as needed, using camel case.
 });
 
+//*HÄR BÖRJAR MIN KOD*/
 let longitude;
 let lattitude;
 //Hämtar användarens longitud och lattitud för att märka ur var du är på kartan
@@ -49,6 +51,7 @@ if ("geolocation" in navigator) {
   });
 } else {
   //Om din webbläsare inte stödjer funktionen
+  window.alert("Din webbläsare stödjer inte geolokalisering!");
   longitude = 37.422131;
   lattitude = -122.084801;
 }

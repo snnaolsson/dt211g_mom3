@@ -49,6 +49,7 @@ async function displayCourses() {
             label: "Antal sökande",
             data: applicants,
             borderWidth: 1,
+            indexAxis: "y",
           },
         ],
       },
