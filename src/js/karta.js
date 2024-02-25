@@ -43,18 +43,7 @@
 //*HÄR BÖRJAR MIN KOD*/
 let longitude;
 let lattitude;
-//Hämtar användarens longitud och lattitud för att märka ur var du är på kartan
-if ("geolocation" in navigator) {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    lattitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-  });
-} else {
-  //Om din webbläsare inte stödjer funktionen
-  window.alert("Din webbläsare stödjer inte geolokalisering!");
-  longitude = 37.422131;
-  lattitude = -122.084801;
-}
+
 let map;
 
 //funktion för att söka efter platser och sedan visa dessa med google maps
