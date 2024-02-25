@@ -1,3 +1,4 @@
+//Från leaflets dokumentation - det kartan visar från början är från deras exempel i dokumentationen
 var map = L.map("open-map").setView([51.505, -0.09], 13);
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
