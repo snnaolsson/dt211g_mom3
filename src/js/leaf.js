@@ -21,17 +21,19 @@ async function getCoordinates() {
     );
 
     const data = await response.json();
-    markerLayer.clearLayers(); //Rensas markörerna mellan varje sökning
+    markerLayer.clearLayers(); //Rensa markörerna mellan varje sökning
+
     // Om det finns resultat från API:et
     if (data.length > 0) {
       // Loopa igenom varje plats i resultaten
       data.forEach((place) => {
-        // Hämta latitud, longitud och platsens namn från platsobjektet
+        // Hämta latitud, longitud och platsens namn från platsobjektet genom att använda "destructuring" för att extrahera tre egenskaper från objektet place på en och samma gång
         const { lat, lon, display_name } = place;
         L.marker([lat, lon]).addTo(markerLayer).bindPopup(display_name); // Skapa en markör för platsen och lägg till den på markörlagret, med en popup med platsens namn
       });
 
-      map.setView([data[0].lat, data[0].lon], 10); // // Centrera kartan till den första platsen i resultate
+      // Centrera kartan till den första platsen i resultate
+      map.setView([data[0].lat, data[0].lon], 10);
     } else {
       console.log("Inga resultat hittades för den angivna adressen.");
     }
